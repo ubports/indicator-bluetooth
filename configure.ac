@@ -61,7 +61,6 @@ dnl ###########################################################################
 AC_OUTPUT([
 Makefile
 data/Makefile
-data/upstart/Makefile
 po/Makefile.in
 src/Makefile
 ])

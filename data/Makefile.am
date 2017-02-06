@@ -2,8 +2,6 @@ BUILT_SOURCES =
 EXTRA_DIST =
 CLEANFILES =
 
-SUBDIRS = upstart
-
 # the indicator bus file
 indicatorsdir = $(datadir)/unity/indicators
 dist_indicators_DATA = com.canonical.indicator.bluetooth
@@ -33,16 +31,6 @@ BUILT_SOURCES += $(upstart_jobs_DATA)
 EXTRA_DIST += $(upstart_jobs_in)
 CLEANFILES += $(upstart_jobs_DATA)
 
-# the xdg autostart job file
-xdg_autostartdir = /etc/xdg/autostart
-xdg_autostart_DATA = indicator-bluetooth.desktop
-xdg_autostart_in = $(xdg_autostart_DATA:.desktop=.desktop.in)
-$(xdg_autostart_DATA): $(xdg_autostart_in)
-	$(AM_V_GEN) $(SED) -e "s|\@pkglibexecdir\@|$(pkglibexecdir)|" $< > $@
-BUILT_SOURCES += $(xdg_autostart_DATA)
-EXTRA_DIST += $(xdg_autostart_in)
-CLEANFILES += $(xdg_autostart_DATA)
-
 # the gsettings schema
 gsettings_SCHEMAS = com.canonical.indicator.bluetooth.gschema.xml
 @INTLTOOL_XML_NOMERGE_RULE@
@@ -50,8 +38,7 @@ gsettings_SCHEMAS = com.canonical.indicator.bluetooth.gschema.xml
 
 EXTRA_DIST += \
   com.canonical.indicator.bluetooth.gschema.xml.in \
-  indicator-bluetooth.conf.in \
-  indicator-bluetooth.desktop.in
+  indicator-bluetooth.conf.in
 
 CLEANFILES += \
   $(dbus_services_DATA) \
