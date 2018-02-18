@@ -4,6 +4,7 @@ Priority: extra
 Maintainer: Ubuntu Desktop Team <ubuntu-desktop@lists.ubuntu.com>
 Build-Depends: debhelper (>= 9.0),
                dh-autoreconf,
+               dh-systemd,
                dh-translations,
                gnome-common,
                libglib2.0-dev,

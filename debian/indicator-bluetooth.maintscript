@@ -1,0 +1,1 @@
+rm_conffile /etc/xdg/autostart/indicator-bluetooth.desktop 0.0.6+17.04.20170207-0ubuntu1~
