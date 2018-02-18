@@ -1,4 +1,4 @@
-indicator-bluetooth (0.0.7+ubports1) xenial; urgency=medium
+indicator-bluetooth (0.0.7+ubports1) bionic; urgency=medium
 
   * Update Jenkinsfile for xenial
 
